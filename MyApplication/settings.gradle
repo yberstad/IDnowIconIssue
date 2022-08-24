@@ -1,0 +1,35 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenLocal()
+        jcenter()
+        maven {
+            url("$rootDir/google-pay/")
+        }
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://www.jitpack.io' }
+        maven {
+            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
+        }
+        maven {
+            url = uri("https://repo.authada.de/public/")
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username "<removed>"
+                password "<removed>"
+            }
+        }
+    }
+}
+rootProject.name = "My Application"
+include ':app'
